@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ARC-D HOMES</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+    .about-slider{
+position:relative;
+width:100%;
+height:500px;
+overflow:hidden;
+border-radius:10px;
+}
+
+.about-slider img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+.slider-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:55px;
+height:55px;
+border:none;
+background:rgba(255,255,255,.85);
+color:#0b2e59;
+font-size:30px;
+cursor:pointer;
+z-index:10;
+transition:.3s;
+}
+
+.slider-btn:hover{
+background:#ff7b00;
+color:white;
+}
+
+.prev{
+left:20px;
+}
+
+.next{
+right:20px;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+overflow-x:hidden;
+background:#f7f7f7;
+}
+
+/* NAVBAR */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.6);
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#ff7b00;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ff7b00;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+position:relative;
+overflow:hidden;
+}
+.hero::after{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.45);
+z-index:1;
+}
+
+.hero-content{
+z-index:2;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:1s;
+}
+
+.slide.active{
+opacity:1;
+}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-content{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+color:white;
+z-index:2;
+}
+
+.hero-content h1{
+font-size:25px;
+letter-spacing:3px;
+}
+
+.hero-content h2{
+font-size:65px;
+font-weight:700;
+}
+
+.hero-content a{
+display:inline-block;
+margin-top:20px;
+padding:12px 30px;
+background:#ff7b00;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+#about .about-container{
+width:100%;
+max-width:1400px;
+margin:auto;
+
+display:grid;
+grid-template-columns:55% 45%;
+gap:40px;
+align-items:center;
+
+padding:45px;
+
+background:#f9fbfd;
+
+min-height:auto;
+
+border-radius:25px;
+
+box-shadow:
+0 10px 40px rgba(0,0,0,.08),
+0 0 25px rgba(29,161,242,.10);
+
+overflow:hidden;
+}
+
+.about-heading{
+font-size:42px;
+margin-bottom:10px;
+color:#222;
+}
+
+.about-subtitle{
+margin-bottom:30px;
+color:#666;
+font-size:17px;
+}
+
+.about-card{
+display:flex;
+gap:20px;
+padding:20px;
+background:#fff;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.about-card:hover{
+transform:translateY(-5px);
+}
+
+.letter{
+width:60px;
+height:60px;
+min-width:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+font-weight:700;
+color:white;
+background:linear-gradient(135deg,#1da1f2,#77d6ff);
+border-radius:15px;
+}
+
+.about-card h3{
+margin-bottom:10px;
+color:#222;
+}
+
+.about-card p{
+color:#666;
+line-height:1.7;
+}
+
+.about-slider{
+position:relative;
+height:700px;
+overflow:hidden;
+border-radius:20px;
+}
+
+.about-slider img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:20px;
+}
+
+.slider-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:60px;
+height:60px;
+border:none;
+background:rgba(255,255,255,.9);
+font-size:30px;
+cursor:pointer;
+z-index:10;
+}
+
+.prev{
+left:20px;
+}
+
+.next{
+right:20px;
+}
+
+.slider-btn:hover{
+background:#ff7b00;
+color:white;
+}
+
+.contact{
+grid-template-columns:1fr;
+}
+
+.about-slider{
+height:350px;
+}
+
+.about-heading{
+font-size:30px;
+}
+
+
+
+/* SECTION */
+
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:40px;
+color:#222;
+}
+
+.section-title span{
+color:#ff7b00;
+}
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.feature-box{
+background:white;
+padding:30px;
+text-align:center;
+border-radius:10px;
+transition:.4s;
+}
+
+.feature-box:hover{
+transform:translateY(-10px);
+}
+
+.feature-box h3{
+margin-top:15px;
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+.about-heading{
+font-size:42px;
+font-weight:700;
+color:#222;
+margin-bottom:15px;
+display:block;
+}
+.about-content{
+position:relative;
+z-index:2;
+width:100%;
+}
+
+.about-slider{
+order:2;
+position:relative;
+width:100%;
+height:500px;
+overflow:hidden;
+border-radius:10px;
+}
+
+.about-slider img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+border-radius:10px;
+}
+
+.about img{
+width:100%;
+border-radius:10px;
+}
+
+
+.about h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+#about .about-container{
+width:100%;
+max-width:none;
+width:100%;
+padding:45px;
+
+background:#f9fbfd;
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+min-height:700px;
+
+border-radius:25px;
+
+box-shadow:
+0 10px 40px rgba(0,0,0,.08),
+0 0 25px rgba(29,161,242,.10);
+
+position:relative;
+overflow:visible;
+
+transition:.5s;
+}
+
+#Our\ Philosophy .glass-about,
+#Why\ Choose\ Us .glass-about{
+
+background:rgba(255,255,255,.85);
+
+backdrop-filter:blur(12px);
+
+}
+
+/* SERVICES */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.service{
+position:relative;
+overflow:hidden;
+border-radius:10px;
+}
+
+.service img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.service-content{
+position:absolute;
+bottom:0;
+background:rgba(0,0,0,0.7);
+color:white;
+width:100%;
+padding:15px;
+}
+
+/* PROCESS */
+
+.process{
+padding:100px 8%;
+background:linear-gradient(
+90deg,
+#f6a143 0%,
+#e7d4bf 100%
+);
+position:relative;
+overflow:hidden;
+}
+
+.process .section-title span{
+color:#ff7b00;
+font-size:20px;
+font-weight:500;
+display:block;
+margin-bottom:10px;
+}
+
+.process .section-title h2{
+font-size:60px;
+font-weight:700;
+color:#1d2b39;
+}
+
+.steps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:60px 40px;
+margin-top:70px;
+}
+
+.step{
+position:relative;
+text-align:center;
+background:none;
+padding:0;
+}
+
+.step-circle{
+width:190px;
+height:190px;
+margin:auto;
+border:12px solid #f1f1f1;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:transparent;
+position:relative;
+}
+
+.step-circle img{
+width:75px;
+height:75px;
+opacity:.95;
+}
+
+.step-number{
+position:absolute;
+top:-15px;
+right:10px;
+width:50px;
+height:50px;
+background:#083d77;
+color:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+font-weight:600;
+}
+
+.step h3{
+margin-top:25px;
+font-size:18px;
+font-weight:600;
+color:#1d2b39;
+line-height:1.5;
+}
+
+@media(max-width:991px){
+
+.steps{
+grid-template-columns:repeat(2,1fr);
+}
+
+.process .section-title h2{
+font-size:40px;
+}
+}
+
+@media(max-width:768px){
+
+.steps{
+grid-template-columns:1fr;
+}
+
+.step-circle{
+width:150px;
+height:150px;
+}
+}
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.projects img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+transition:.5s;
+cursor:pointer;
+}
+
+.projects img:hover{
+transform:scale(1.05);
+}
+
+/* CONTACT */
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.contact img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:20px;
+}
+form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input,
+textarea{
+padding:15px;
+border:1px solid #ddd;
+}
+
+button{
+padding:15px;
+background:#ff7b00;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+.contact img{
+width:100%;
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#1f1f1f;
+color:white;
+padding:60px 8%;
+width:100%;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:50px;
+width:100%;
+}
+
+.footer-grid h3{
+margin-bottom:15px;
+font-size:22px;
+color:#ff7b00;
+}
+
+.footer-grid p,
+.footer-grid a{
+font-size:16px;
+line-height:1.8;
+color:#ddd;
+text-decoration:none;
+}
+
+.footer-grid a:hover{
+color:#ff7b00;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero-content h2{
+font-size:40px;
+}
+
+.about,
+.contact{
+grid-template-columns:1fr;
+}
+
+nav ul{
+gap:10px;
+font-size:14px;
+}
+
+}
+/* WHY CHOOSE US */
+
+.why-choose-us{
+    padding:100px 8%;
+    background:#f8f9fb;
+}
+
+.why-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:80px;
+    flex-wrap:wrap;
+}
+
+.why-text{
+    flex:1;
+    min-width:320px;
+}
+
+.section-tag{
+    color:#c8a45d;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+.why-text h2{
+    font-size:48px;
+    margin:20px 0;
+    color:#222;
+}
+
+.why-text h2 span{
+    color:#c8a45d;
+}
+
+.why-text p{
+    color:#666;
+    line-height:1.9;
+    margin-bottom:30px;
+}
+
+.features{
+    display:grid;
+    gap:15px;
+}
+
+.feature{
+    font-size:17px;
+    color:#333;
+    font-weight:500;
+}
+
+/* PREMIUM HOUSE ANIMATION */
+
+
+.house-animation{
+
+flex:1;
+height:500px;
+position:relative;
+overflow:hidden;
+
+background:linear-gradient(
+#dff3ff,
+#ffffff
+);
+
+border-radius:30px;
+
+}
+
+
+
+.sky{
+
+position:absolute;
+width:100%;
+height:100%;
+
+}
+
+
+
+.sun{
+
+position:absolute;
+
+right:60px;
+top:50px;
+
+width:70px;
+height:70px;
+
+background:#ffd54f;
+
+border-radius:50%;
+
+animation:pulse 3s infinite;
+
+}
+
+
+
+.ground{
+
+position:absolute;
+
+bottom:0;
+
+height:90px;
+
+width:100%;
+
+background:#9ccc65;
+
+}
+
+
+
+
+.house{
+
+
+position:absolute;
+
+bottom:90px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:240px;
+
+height:200px;
+
+
+}
+
+
+
+/* FOUNDATION */
+
+
+.base{
+
+position:absolute;
+
+bottom:0;
+
+width:240px;
+
+height:20px;
+
+background:#555;
+
+
+animation:buildBase 1s forwards;
+
+}
+
+
+
+
+/* WALL */
+
+
+.walls{
+
+position:absolute;
+
+bottom:20px;
+
+width:240px;
+
+height:130px;
+
+background:#eeeeee;
+
+
+transform:scaleY(0);
+
+transform-origin:bottom;
+
+
+animation:buildWall 1.5s forwards;
+
+animation-delay:1s;
+
+
+}
+
+
+
+
+
+/* ROOF */
+
+
+.roof{
+
+
+position:absolute;
+
+top:-70px;
+
+left:-20px;
+
+
+width:0;
+
+height:0;
+
+
+border-left:140px solid transparent;
+
+border-right:140px solid transparent;
+
+border-bottom:90px solid #ff7b00;
+
+
+opacity:0;
+
+
+animation:buildRoof 1s forwards;
+
+animation-delay:2.5s;
+
+
+}
+
+
+
+
+
+/* DOOR */
+
+
+.door{
+
+position:absolute;
+
+bottom:0;
+
+left:100px;
+
+height:70px;
+
+width:45px;
+
+background:#6d4c41;
+
+opacity:0;
+
+
+animation:showPart 1s forwards;
+
+animation-delay:3.5s;
+
+}
+
+
+
+
+/* WINDOWS */
+
+
+.window{
+
+position:absolute;
+
+height:40px;
+
+width:40px;
+
+
+background:#81d4fa;
+
+border:5px solid white;
+
+
+opacity:0;
+
+}
+
+
+
+.window1{
+
+left:35px;
+
+top:40px;
+
+animation:showPart 1s forwards;
+
+animation-delay:3.8s;
+
+}
+
+
+.window2{
+
+right:35px;
+
+top:40px;
+
+
+animation:showPart 1s forwards;
+
+animation-delay:4s;
+
+}
+
+
+
+
+/* TREES */
+
+
+.tree{
+
+
+position:absolute;
+
+bottom:80px;
+
+width:40px;
+
+height:100px;
+
+background:#795548;
+
+
+}
+
+
+.tree:before{
+
+content:"";
+
+position:absolute;
+
+width:90px;
+
+height:90px;
+
+background:#43a047;
+
+border-radius:50%;
+
+left:-25px;
+
+top:-50px;
+
+
+}
+
+
+.tree1{
+
+left:40px;
+
+}
+
+
+.tree2{
+
+right:40px;
+
+}
+
+
+
+
+.construction-text{
+
+
+position:absolute;
+
+bottom:20px;
+
+width:100%;
+
+text-align:center;
+
+
+font-size:18px;
+
+font-weight:600;
+
+color:#333;
+
+
+}
+
+
+
+
+/* ANIMATION */
+
+
+@keyframes buildBase{
+
+from{
+
+width:0;
+
+}
+
+to{
+
+width:240px;
+
+}
+
+}
+
+
+
+@keyframes buildWall{
+
+from{
+
+transform:scaleY(0);
+
+}
+
+to{
+
+transform:scaleY(1);
+
+}
+
+}
+
+
+
+@keyframes buildRoof{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+@keyframes showPart{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+
+
+
+@keyframes pulse{
+
+
+50%{
+
+transform:scale(1.1);
+
+}
+
+
+}
+
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:768px){
+
+
+.house-animation{
+
+height:350px;
+
+margin-top:40px;
+
+}
+
+
+.house{
+
+transform:translateX(-50%) scale(.75);
+
+}
+
+
+.tree1{
+
+left:10px;
+
+}
+
+
+.tree2{
+
+right:10px;
+
+}
+
+
+}
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+z-index:9999;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<header>
+
+<div class="logo">ARC-D HOMES</div>
+
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#process">Process</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+</header>
+
+<!-- HERO -->
+ <a class="whatsapp-float" 
+href="https://wa.me/919741940707?text=Hi%20ARC-D%20HOMES%2C%20I%20want%20a%20quote"
+target="_blank">
+📱 WhatsApp Us
+</a>
+
+<section class="hero" id="home">
+
+<div class="slide active">
+<img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1920&q=80">
+</div>
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80">
+</div>
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80">
+</div>
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1600566753151-384129cf4e3e?auto=format&fit=crop&w=1920&q=80">
+</div>
+
+<div class="hero-content">
+<h1>WELCOME TO</h1>
+<h2>ARC-D HOMES</h2>
+<a href="quote.html">Get Quote</a></div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section>
+
+<div class="features">
+
+<div class="feature-box">
+<h3>Residential Interiors</h3>
+</div>
+
+<div class="feature-box">
+<h3>Luxury Commercial Interiors</h3>
+</div>
+
+<div class="feature-box">
+<h3>Unique Designs</h3>
+</div>
+
+<div class="feature-box">
+<h3>Experienced Team</h3>
+</div>
+
+<div class="feature-box">
+<h3>Architectural Planning</h3>
+</div>
+
+<div class="feature-box">
+<h3>High Quality Construction</h3>
+</div>
+
+<div class="feature-box">
+<h3>Residential Construction</h3>
+</div>
+
+<div class="feature-box">
+<h3>Commercial Construction</h3>
+</div>
+
+<div class="feature-box">
+<h3>Industrial Construction</h3>
+</div>
+
+<div class="feature-box">
+<h3>Institutional Construction</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="about-container">
+
+<div class="about-content">
+
+<h2 class="about-heading">About ARC-D HOMES</h2>
+
+
+<p class="about-subtitle">
+Welcome to ARC-D HOMES where your vision of a perfect space
+is transformed into structural reality.
+</p>
+
+<div class="about-card">
+<div class="letter">A</div>
+<div>
+<h3>Architectural Excellence</h3>
+<p>
+Crafting innovative, functional and aesthetically striking
+spaces tailored to your lifestyle.
+</p>
+</div>
+</div>
+
+<div class="about-card">
+<div class="letter">R</div>
+<div>
+<h3>Rehabilitation & Repair</h3>
+<p>
+Restoring and reviving structures with durability,
+safety and modern efficiency.
+</p>
+</div>
+</div>
+
+<div class="about-card">
+<div class="letter">C</div>
+<div>
+<h3>Construction & Management</h3>
+<p>
+Executing projects with precision engineering,
+premium materials and quality workmanship.
+</p>
+</div>
+</div>
+
+<div class="about-card">
+<div class="letter">D</div>
+<div>
+<h3>Design Innovation</h3>
+<p>
+Combining engineering and creativity to create
+beautiful and functional living spaces.
+</p>
+</div>
+</div>
+
+</div>
+
+<div class="about-slider">
+
+<button class="slider-btn prev"
+onclick="prevAbout()">❮</button>
+
+<img id="aboutImage"
+src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=80">
+
+<button class="slider-btn next"
+onclick="nextAbout()">❯</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="why-choose-us">
+    <div class="why-content">
+
+        <!-- Left Content -->
+        <div class="why-text">
+            <span class="section-tag">WHY CHOOSE US</span>
+
+            <h2>
+                Building Dreams Into
+                <span>Beautiful Homes</span>
+            </h2>
+
+            <p>
+                At ARC-D HOMES, we combine architectural excellence,
+                innovative design, quality construction, and timely project
+                delivery to create homes that are both beautiful and functional.
+                From concept planning to final execution, we ensure every
+                detail is crafted with precision and care.
+            </p>
+
+            <div class="why-features">
+                <div class="feature">
+                    ✓ Modern Architectural Design
+                </div>
+
+                <div class="why-feature">
+                    ✓ Premium Construction Quality
+                </div>
+
+                <div class="why-feature">
+                    ✓ Transparent Project Management
+                </div>
+
+                <div class="why-feature">
+                    ✓ On-Time Delivery
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Animation -->
+       <div class="house-animation">
+
+<div class="sky"></div>
+
+<div class="sun"></div>
+
+<div class="ground"></div>
+
+
+<div class="house">
+
+<div class="base"></div>
+
+<div class="walls">
+
+<div class="window window1"></div>
+<div class="window window2"></div>
+
+<div class="door"></div>
+
+</div>
+
+
+<div class="roof"></div>
+
+
+</div>
+
+
+<div class="tree tree1"></div>
+<div class="tree tree2"></div>
+
+
+<div class="construction-text">
+Building Your Dream Home...
+</div>
+
+
+</div>
+</section>
+
+<!-- SERVICES -->
+ 
+
+<section id="services">
+
+<div class="section-title">
+<h2>Innovative <span>Services</span></h2>
+</div>
+
+<div class="services">
+
+<div class="service">
+    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80">
+<div class="service-content">
+Interior Design
+</div>
+</div>
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"><div class="service-content">
+Construction
+</div>
+</div>
+
+<div class="service">
+<img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80"><div class="service-content">
+3D Planning
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROCESS -->
+
+<section class="process" id="process">
+
+<div class="section-title">
+<span>OUR PROCESS</span>
+<h2>How We Works</h2>
+</div>
+
+<div class="steps">
+
+<div class="step">
+<div class="step-circle">
+<img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png">
+<div class="step-number">1</div>
+</div>
+<h3>Discovery Meet</h3>
+</div>
+
+<div class="step">
+<div class="step-circle">
+<img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png">
+<div class="step-number">2</div>
+</div>
+<h3>Customized Proposal</h3>
+</div>
+
+<div class="step">
+<div class="step-circle">
+<img src="https://cdn-icons-png.flaticon.com/512/4305/4305512.png">
+<div class="step-number">3</div>
+</div>
+<h3>Scope Of Work<br>Meetings & Site Analysis</h3>
+</div>
+
+<div class="step">
+<div class="step-circle">
+<img src="https://cdn-icons-png.flaticon.com/512/2942/2942432.png">
+<div class="step-number">4</div>
+</div>
+<h3>Signing The Agreement</h3>
+</div>
+
+<div class="step">
+<div class="step-circle">
+<img src="https://cdn-icons-png.flaticon.com/512/1006/1006555.png">
+<div class="step-number">5</div>
+</div>
+<h3>Design Planning</h3>
+</div>
+
+<div class="step">
+<div class="step-circle">
+<img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png">
+<div class="step-number">6</div>
+</div>
+<h3>Execution Planning</h3>
+</div>
+
+<div class="step">
+<div class="step-circle">
+<img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png">
+<div class="step-number">7</div>
+</div>
+<h3>Site Execution</h3>
+</div>
+
+<div class="step">
+<div class="step-circle">
+<img src="https://cdn-icons-png.flaticon.com/512/619/619153.png">
+<div class="step-number">8</div>
+</div>
+<h3>Project Delivery</h3>
+</div>
+
+</div>
+
+</section>
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="section-title">
+<h2>Completed <span>Projects</span></h2>
+</div>
+
+<div class="projects">
+
+<img src="https://images.unsplash.com/photo-1616594039964-3f7e6e1b88d0?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80">
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="section-title">
+<h2>Contact <span>Us</span></h2>
+</div>
+
+<div class="contact">
+
+<form>
+
+<input type="text" placeholder="Name">
+
+<input type="email" placeholder="Email">
+
+<input type="tel" placeholder="Phone">
+
+<textarea rows="5" placeholder="Message"></textarea>
+
+<button>Submit</button>
+
+</form>
+
+<img src="image.png">
+</div>
+</section>
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>ARC-D HOMES</h3>
+<p>
+Architecture | Interiors | Construction
+</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>+91 9741940707</p>
+<p>arcdengineers@gmail.com</p>
+<p>#51, 9th Main Road, LKR Nagar,<br>Bangalore - 560094</p>
+</div>
+
+</div>
+
+</footer>
+
+<script>
+    const aboutImages = [
+
+"https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=80",
+
+"https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1200&q=80",
+
+"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+
+"https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80",
+
+"https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+
+];
+
+let aboutCurrent = 0;
+
+function showAboutImage(){
+document.getElementById("aboutImage").src =
+aboutImages[aboutCurrent];
+}
+
+function nextAbout(){
+
+aboutCurrent++;
+
+if(aboutCurrent >= aboutImages.length){
+aboutCurrent = 0;
+}
+
+showAboutImage();
+}
+
+function prevAbout(){
+
+aboutCurrent--;
+
+if(aboutCurrent < 0){
+aboutCurrent = aboutImages.length - 1;
+}
+
+showAboutImage();
+}
+
+setInterval(() => {
+
+nextAbout();
+
+}, 4000);
+
+const slides=document.querySelectorAll('.slide');
+let current=0;
+
+setInterval(()=>{
+
+slides[current].classList.remove('active');
+
+current=(current+1)%slides.length;
+
+slides[current].classList.add('active');
+
+},4000);
+
+</script>
+
+</body>
+<a href="https://wa.me/919741940707?text=Hello%20I%20want%20a%20quote%20from%20ARC-D%20HOMES"
+   target="_blank"
+   class="whatsapp-float">
+   💬
+</a>
+</html>
